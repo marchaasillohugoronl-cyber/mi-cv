@@ -1,0 +1,351 @@
+#sobre-mi {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: #0d1117;
+  position: relative;
+  font-family: 'Courier New', monospace;
+}
+
+/* Grid de fondo estilo código */
+#sobre-mi::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(33, 150, 243, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(33, 150, 243, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  z-index: 0;
+}
+
+.contenedor-profesional {
+  max-width: 900px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* Barra superior estilo terminal */
+.contenedor-profesional::before {
+  content: '● ● ●';
+  display: block;
+  padding: 0.8rem 1rem;
+  background: #0d1117;
+  border-bottom: 1px solid #30363d;
+  color: #58a6ff;
+  font-size: 0.7rem;
+  letter-spacing: 0.3rem;
+  border-radius: 6px 6px 0 0;
+}
+
+/* Encabezado */
+.encabezado {
+  padding: 2rem 2rem 1rem;
+  border-bottom: 1px solid #30363d;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.titulo-principal {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: #58a6ff;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  font-family: 'Courier New', monospace;
+}
+
+.titulo-principal::before {
+  content: '> ';
+  color: #7ee787;
+}
+
+.linea-separadora {
+  display: none;
+}
+
+.subtitulo {
+  font-size: 0.95rem;
+  color: #8b949e;
+  margin: 0;
+  font-family: 'Courier New', monospace;
+}
+
+.subtitulo::before {
+  content: '// ';
+  color: #6e7681;
+}
+
+/* Presentación */
+.presentacion {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #30363d;
+  animation: fadeIn 0.5s ease-out 0.1s backwards;
+}
+
+.texto-principal {
+  font-size: 1rem;
+  color: #c9d1d9;
+  line-height: 1.7;
+  margin: 0;
+  font-family: 'Courier New', monospace;
+}
+
+.texto-principal::before {
+  content: '$ ';
+  color: #7ee787;
+  font-weight: bold;
+}
+
+/* Áreas de especialización */
+.areas-especializacion {
+  padding: 2rem;
+  animation: fadeIn 0.5s ease-out 0.2s backwards;
+}
+
+.titulo-seccion {
+  font-size: 1.1rem;
+  color: #58a6ff;
+  font-weight: 600;
+  margin: 0 0 1.5rem 0;
+  font-family: 'Courier New', monospace;
+}
+
+.titulo-seccion::before {
+  content: '## ';
+  color: #7ee787;
+}
+
+.grid-especialidades {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.item-especialidad {
+  padding: 1.5rem;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.item-especialidad:hover {
+  border-left-color: #58a6ff;
+  background: #161b22;
+  transform: translateX(5px);
+}
+
+.numero {
+  font-size: 0.75rem;
+  color: #7ee787;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-family: 'Courier New', monospace;
+}
+
+.numero::before {
+  content: '[';
+  color: #8b949e;
+}
+
+.numero::after {
+  content: ']';
+  color: #8b949e;
+}
+
+.item-especialidad h4 {
+  font-size: 1.1rem;
+  color: #c9d1d9;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  font-family: 'Courier New', monospace;
+}
+
+.item-especialidad h4::before {
+  content: '• ';
+  color: #58a6ff;
+}
+
+.item-especialidad p {
+  font-size: 0.9rem;
+  color: #8b949e;
+  margin: 0;
+  line-height: 1.5;
+  font-family: 'Courier New', monospace;
+}
+
+/* Acciones */
+.acciones {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  border-top: 1px solid #30363d;
+  animation: fadeIn 0.5s ease-out 0.3s backwards;
+  flex-wrap: wrap;
+}
+
+.enlace-boton {
+  text-decoration: none;
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.boton {
+  width: 100%;
+  padding: 0.9rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Courier New', monospace;
+  position: relative;
+}
+
+.boton::before {
+  font-weight: normal;
+  margin-right: 0.5rem;
+}
+
+.boton-principal {
+  background: #238636;
+  color: #ffffff;
+  border-color: #238636;
+}
+
+.boton-principal::before {
+  content: '→ ';
+}
+
+.boton-principal:hover {
+  background: #2ea043;
+  border-color: #2ea043;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(35, 134, 54, 0.4);
+}
+
+.boton-secundario {
+  background: transparent;
+  color: #c9d1d9;
+  border-color: #30363d;
+}
+
+.boton-secundario::before {
+  content: '⚡ ';
+}
+
+.boton-secundario:hover {
+  background: #30363d;
+  border-color: #58a6ff;
+  transform: translateY(-2px);
+}
+
+.boton:active {
+  transform: translateY(0);
+}
+
+/* Cursor parpadeante */
+.titulo-principal::after {
+  content: '▋';
+  color: #7ee787;
+  animation: blink 1s infinite;
+  margin-left: 0.2rem;
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #sobre-mi {
+    padding: 1rem;
+  }
+
+  .contenedor-profesional {
+    border-radius: 6px;
+  }
+
+  .encabezado,
+  .presentacion,
+  .areas-especializacion,
+  .acciones {
+    padding: 1.5rem;
+  }
+
+  .grid-especialidades {
+    grid-template-columns: 1fr;
+  }
+
+  .acciones {
+    flex-direction: column;
+  }
+
+  .enlace-boton {
+    max-width: 100%;
+  }
+
+  .titulo-principal {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contenedor-profesional::before {
+    font-size: 0.6rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .encabezado,
+  .presentacion,
+  .areas-especializacion,
+  .acciones {
+    padding: 1rem;
+  }
+
+  .titulo-principal {
+    font-size: 1.3rem;
+  }
+
+  .subtitulo {
+    font-size: 0.85rem;
+  }
+
+  .item-especialidad {
+    padding: 1rem;
+  }
+}
+
+/* Scroll suave */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}

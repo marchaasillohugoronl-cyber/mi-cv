@@ -1,0 +1,274 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0d1117;
+  border-bottom: 1px solid #30363d;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: 'Courier New', monospace;
+  transition: all 0.3s ease;
+}
+
+.nav::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #58a6ff, transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav:hover::after {
+  opacity: 1;
+}
+
+.logo {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #58a6ff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Courier New', monospace;
+  position: relative;
+}
+
+.logo::before {
+  content: '$ ';
+  color: #7ee787;
+  font-weight: normal;
+}
+
+.logo::after {
+  content: '▋';
+  color: #7ee787;
+  animation: blink 1s infinite;
+  margin-left: 0.3rem;
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.logo:hover {
+  color: #7ee787;
+  transform: translateX(5px);
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu a {
+  color: #8b949e;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  position: relative;
+  display: block;
+  font-family: 'Courier New', monospace;
+  border: 1px solid transparent;
+}
+
+.menu a::before {
+  content: '> ';
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  color: #7ee787;
+}
+
+.menu a:hover::before {
+  opacity: 1;
+}
+
+.menu a:hover {
+  color: #c9d1d9;
+  background: rgba(88, 166, 255, 0.1);
+  border-color: #30363d;
+}
+
+/* Efecto activo/actual */
+.menu a.activo {
+  color: #58a6ff;
+  background: rgba(88, 166, 255, 0.15);
+  border-color: #58a6ff;
+}
+
+.menu a.activo::before {
+  opacity: 1;
+}
+
+.hamburguesa {
+  display: none;
+  font-size: 1.5rem;
+  background: transparent;
+  border: 1px solid #30363d;
+  color: #8b949e;
+  cursor: pointer;
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 1001;
+  font-family: 'Courier New', monospace;
+}
+
+.hamburguesa:hover {
+  background: rgba(88, 166, 255, 0.1);
+  border-color: #58a6ff;
+  color: #c9d1d9;
+}
+
+.hamburguesa:active {
+  transform: scale(0.95);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav {
+    padding: 1rem 1.5rem;
+  }
+
+  .hamburguesa {
+    display: block;
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background: #0d1117;
+    flex-direction: column;
+    width: 280px;
+    height: 100vh;
+    padding: 4rem 1.5rem 2rem;
+    gap: 0.5rem;
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+    transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    border-left: 1px solid #30363d;
+    overflow-y: auto;
+  }
+
+  .menu.activo {
+    right: 0;
+    display: flex;
+  }
+
+  /* Header del menú móvil */
+  .menu::before {
+    content: '// Menu';
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    color: #6e7681;
+    font-size: 0.9rem;
+    font-family: 'Courier New', monospace;
+  }
+
+  .menu li {
+    opacity: 0;
+    transform: translateX(20px);
+    animation: slideIn 0.4s ease forwards;
+  }
+
+  .menu li:nth-child(1) { animation-delay: 0.1s; }
+  .menu li:nth-child(2) { animation-delay: 0.15s; }
+  .menu li:nth-child(3) { animation-delay: 0.2s; }
+  .menu li:nth-child(4) { animation-delay: 0.25s; }
+  .menu li:nth-child(5) { animation-delay: 0.3s; }
+
+  .menu a {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 6px;
+  }
+
+  .menu a:hover {
+    transform: translateX(5px);
+    border-left: 3px solid #58a6ff;
+  }
+
+  .menu a.activo {
+    border-left: 3px solid #7ee787;
+  }
+
+  /* Overlay oscuro cuando el menú está abierto */
+  .menu.activo::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+    animation: fadeIn 0.3s ease;
+  }
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu {
+    width: 250px;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .logo::after {
+    display: none;
+  }
+}
+
+/* Scrollbar personalizado para el menú móvil */
+.menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.menu::-webkit-scrollbar-track {
+  background: #0d1117;
+}
+
+.menu::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 3px;
+}
+
+.menu::-webkit-scrollbar-thumb:hover {
+  background: #58a6ff;
+}
