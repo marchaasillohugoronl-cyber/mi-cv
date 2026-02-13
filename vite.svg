@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <!-- Gradients for depth -->
+    <linearGradient id="archGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1793D1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0A5F8F;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="codeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7DD3FC;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#38BDF8;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Glow effect -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background circle with gradient -->
+  <circle cx="250" cy="250" r="240" fill="#0B1120" opacity="0.95"/>
+  
+  <!-- Stylized Arch Linux mountain -->
+  <g filter="url(#glow)">
+    <!-- Main mountain shape inspired by Arch -->
+    <path d="M 250 80 
+             L 220 140 L 190 200 L 170 240 L 160 270 
+             L 155 295 L 150 330
+             L 350 330
+             L 345 295 L 340 270 L 330 240 L 310 200 L 280 140 Z" 
+          fill="url(#archGradient)" 
+          stroke="#1793D1" 
+          stroke-width="2"/>
+    
+    <!-- Inner highlight for depth -->
+    <path d="M 250 80 
+             L 235 115 L 220 155 L 210 190 L 205 220
+             L 295 220 L 290 190 L 280 155 L 265 115 Z" 
+          fill="#38BDF8" 
+          opacity="0.3"/>
+  </g>
+  
+  <!-- Code brackets integrated into design -->
+  <g fill="url(#codeGradient)" font-family="'Courier New', monospace" font-size="120" font-weight="bold" filter="url(#glow)">
+    <!-- Left bracket -->
+    <text x="95" y="280" fill="#7DD3FC" opacity="0.9">&lt;</text>
+    <!-- Right bracket -->
+    <text x="360" y="280" fill="#7DD3FC" opacity="0.9">/&gt;</text>
+  </g>
+  
+  <!-- Binary code pattern in background -->
+  <g fill="#1793D1" opacity="0.15" font-family="'Courier New', monospace" font-size="12">
+    <text x="80" y="360">10110101</text>
+    <text x="180" y="375">11001010</text>
+    <text x="280" y="360">01011100</text>
+    <text x="130" y="390">10101110</text>
+    <text x="250" y="405">11100011</text>
+  </g>
+  
+  <!-- Terminal cursor -->
+  <rect x="240" y="340" width="20" height="4" fill="#7DD3FC" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0;0.8" dur="1.5s" repeatCount="indefinite"/>
+  </rect>
+  
+  <!-- Circuit-like connecting lines -->
+  <g stroke="#1793D1" stroke-width="1.5" fill="none" opacity="0.4">
+    <circle cx="150" cy="250" r="3" fill="#38BDF8"/>
+    <line x1="153" y1="250" x2="180" y2="250"/>
+    <circle cx="350" cy="250" r="3" fill="#38BDF8"/>
+    <line x1="320" y1="250" x2="347" y2="250"/>
+  </g>
+  
+  <!-- Bottom text -->
+  <text x="250" y="445" 
+        font-family="'Share Tech Mono', 'Courier New', monospace" 
+        font-size="24" 
+        font-weight="bold"
+        fill="#38BDF8" 
+        text-anchor="middle"
+        letter-spacing="3">DEV • ARCH</text>
+</svg>
