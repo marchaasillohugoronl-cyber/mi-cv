@@ -1,7 +1,7 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/mi-cv/'  // Debe coincidir con tu repo exacto
-})
+  base: '/mi-cv/' // <- Debe coincidir exactamente con tu repo
+});

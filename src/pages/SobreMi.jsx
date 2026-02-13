@@ -15,7 +15,7 @@ const SobreMi = () => {
         {/* Presentación */}
         <div className="presentacion">
           <p className="texto-principal">
-            Estudiante de Desarrollo de Software en SENATI, con bases sólidas en programacion orientada a objetos e informática y enfoque resolutivo. Cuento con conocimientos en virtualización y fundamentos de redes. Apasionado por el código libre y los entornos Linux, me enfoco en el desarrollo de soluciones basadas en datos, automatización y arquitectura de software eficiente.
+            Estudiante de Ingniería de Software con formación en desarrollo web y backend. Experiencia en proyectos académicos utilizando Java (Spring Boot), JavaScript (React, Node.js) y bases de datos relacionales. Interesado en realizar prácticas profesionales donde pueda aplicar mis conocimientos, contribuir en equipo y seguir desarrollando habilidades en entornos reales de desarrollo.
           </p>
         </div>
 
