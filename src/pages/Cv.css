@@ -311,4 +311,14 @@ body {
     flex-direction: column;
     gap: 5px;
   }
+
+
+
+
+	  .cv-container {
+	  width: 210mm;
+	  min-height: 297mm;
+	  margin: auto;
+	  background: white;
+	}
 }
