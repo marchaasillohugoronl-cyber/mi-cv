@@ -14,7 +14,7 @@ const Contacto = () => {
   const contactos = [
     {
       nombre: "Email",
-      valor: "marchaasillohugoronl.com",
+      valor: "marchaasillohugoronl@gmail.com",
       enlace: "mailto:marchaasillohugoronl@gmail.com",
       icono: <FaEnvelope />,
       comando: "send-mail"
